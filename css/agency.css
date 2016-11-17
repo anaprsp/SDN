@@ -230,9 +230,9 @@ header {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+  -webkit-background-size:  cover;
+  -moz-background-size:  cover;
+  background-size:  cover;
   -o-background-size: cover;
   text-align: center;
   color: white;
@@ -272,9 +272,10 @@ header .intro-text .intro-heading {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 75px;
+    font-size: 60px;
     line-height: 75px;
     margin-bottom: 50px;
+    text-shadow: 0 0 8px #333;
   }
 }
 section {
