@@ -28,9 +28,86 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1> Open vSwitch (OVS)</h1>
+
+          <h1>Controladores</h1>
             <span style="font-size:18px">
-            <p>Como o nome sugere, é um <i>switch</i> virtual com código aberto. Simulando <i>switches</i> em ambientes virtuais, ele permite que máquinas virtuais se comuniquem entre si em um mesmo <i>host</i> ou até mesmo realizar a comunicação com a rede física.</p>
+              <p>
+                Aplicação em SDN que gerencia o controle de fluxo para permitir uma rede inteligente. São baseados em protocolos, como o OpenFlow, que permitem aos servidores comunicar os <i>switches</i> para onde enviar os pacotes.</p>
+              <p>
+                O controlador funciona como uma espécie de sistema operacional para a rede. Ao retirar o plano de controle do hardware da rede e executando como software, o controlador facilita o gerenciamento automatizado da rede, facilitando a integração e administração de aplicativos.</p>
+              <p>
+                A seguir, alguns exemplos de controladores:</p>
+
+              <span>
+                <h2 style="margin-left: 30px;"> NOX </h2>
+                <p style="margin-left: 25px;">
+                  NOX foi o primeiro controlador SDN, desenvolvido inicialmente por Nicira Networks, junto com o OpenFlow. Foi doado para a comunidade SDN <i>open source</i>, virando a base para as próximas soluções de controladores.
+                </p> 
+                <p style="margin-left: 25px;">
+                  Nox é dividido em diferentes linhas de desenvolvimento:
+                </p>
+                <h3 style="margin-left: 60px;">NOX clássico</h3>
+                  <p style="margin-left: 50px;">
+                    Versão disponível sob licença pública geral. Suporta as linguagens C++ e <i>Python</i>.
+                  </p>
+                <h3 style="margin-left: 60px;">NOX: O "Novo NOX"</h3>
+                  <p style="margin-left: 50px;">
+                    Apenas contém suporte para C++ e possui menos aplicações que o clássico, mas esta versão é mais rápida e possui melhor código base.
+                  </p>
+                <h3 style="margin-left: 60px;">POX</h3>
+                  <p style="margin-left: 50px;">
+                    Fornece suporte para <i>Python</i>, é conhecido como "irmão" do NOX. Por permitir desenvolvimentos mais rápido e prototipagem, está sendo mais utilizado que o NOX.
+                  </p>
+              </span>
+
+              <spam>
+                <h2 style="margin-left: 30px;"> Beacon </h2>
+                <p style="margin-left: 25px;">
+                  Controlador com base em Java, Beacon é um dos mais populares controladores.  
+                  Foi o primeiro a possibilitar programadores iniciantes a criarem e trabalharem com ambientes SDN, porém é limitado a topologia de estrela.
+                </p>
+              </spam>
+
+              <spam>
+                <h2 style="margin-left: 30px;"> FloodLight </h2>
+                <p style="margin-left: 25px;">
+                   Como o Beacon, é um controlador com base em Java, sendo considerado hoje em dia, o mais popular entre os controladores 
+                </p>
+                 
+                <p style="margin-left: 25px;">
+                  Podemos dizer que sua popularidade vem da facilidade que os desenvolvedores tem para desenvolver aplicações, dado que elas podem ser construídas utilizando a arquitetura <i>REST</i>.
+                </p>
+                <p style="margin-left: 25px;">
+                  Outra vantagem do FloodLight é a possibilidade de controlar uma rede que contém redes OpenFlow conectadas com redes comuns, não OpenFlow.
+                </p>
+              </spam>
+
+              <spam>
+                <h2 style="margin-left: 30px;"> Open DayLight </h2>
+                <p style="margin-left: 25px;">
+                   Deriva do design original do Beacon, sendo também com base em Java, o <i>OpenDaylight</i> é capaz de ser implementado em uma variedade de ambientes de rede de produção. Pode suportar uma estrutura de controlador modular e para outros padrões de SDN e protocolos futuros.
+                </p>
+                <p style="margin-left: 25px;">  
+                  Este controlador é implementado somente em <i>software</i>, e é mantido dentro de sua própria máquina virtual Java (JVM). Isto é, pode ser implementado em <i>hardwares</i> e 
+                  plataformas com suporte Java. 
+                </p>                           
+              </spam>
+
+              <spam>
+                <h2 style="margin-left: 30px;"> Onos </h2>
+                <p style="margin-left: 25px;">
+                  É projetado para operar como um cluster de nós que são idênticos em termo de sua pilha de <i>software</i> e pode suportar falhas de nós individuais sem causar interrupções em sua capacidade de controlar a operação da rede.
+                </p>
+                <p style="margin-left: 25px;">  
+                  Enquanto <i>ONOS</i> se inclina fortemente em protocolos e modelos padrão (OpenFlow, <i>NETCONF</i>,...), sua arquitetura de sistema não está diretamente ligada a eles. No lugar, fornece seu próprio conjunto de abstrações e modelos de alto nível.
+                </p>                           
+              </spam>
+
+
+            </span>
+          <h1>Open vSwitch (OVS)</h1>
+            <span style="font-size:18px">
+            <p>Como o nome sugere, é um <i>switch</i> virtual com código aberto que implementa o protocolo OpenFLow. Simulando <i>switches</i> em ambientes virtuais, ele permite que máquinas virtuais se comuniquem entre si em um mesmo <i>host</i> ou até mesmo realizar a comunicação com a rede física.</p>
             <p>O OVS é executado como se fosse uma distribuição Linux, porém pode ser utilizado em nível de usuário ao custo de perder desempenho e acesso à alguns recursos. Ele também pode ser executado na maioria das plataformas virtuais, como por exemplo <i>VirtualBox</i>, facilitando assim a realização de testes.</p>
             <p>Atualmente o OVS fornece ao usuário o controle de diversos recursos, entre eles:</p>
               <span >
@@ -39,7 +116,7 @@
                   <li><b>VLAN</b></li>
                   <li><b>Isolamento</b></li>
                   <li><b><i>Firewall</i></b></li>
-                  <li><b><i>Tunelamento</i></b></li>
+                  <li><b>Tunelamento</b></li>
                 </ul>
               </span>
 
@@ -62,10 +139,14 @@
               </span>
 
             </span>
+          <h1>FlowVisor</h1>
+            <span style="font-size:18px">
+              <p>O FlowVisor não passa de um controlador OpenFlow que tem como principal característica atuar como um <i>middleware</i> entre os <i>switches</i> e os outros controladores OpenFlow.
+              Todas as mensagens que são trocadas entre <i>switches</i> e o controlador são transmitidas por ele.</p>
+              <p> A sua principal função é dividir a rede entre os outros controladores OpenFlow de maneira a garantir  o isolamento entre as divisões, ou seja, ele deve garantir que cada controlador só possa ter visão e controle sobre seu pedaço da rede. Essa divisão pode ser feita de diversas maneira como por exemplo utilizando os endereços IP ou portas TCP</p>
+            </span>
 
-
-
-		  </section>
+	   	  </section>
         <aside id="sidebar">
           <a href="index.html" class="button">
             <small>SDN</small>
