@@ -539,10 +539,60 @@ header a.button {
 aside a.button {
   display: block;
   width: 138px;
-  padding-left: 64px;
+  padding-left: 75px;
   margin-bottom: 20px;
   font-size: 21px;
   background: transparent url(../images/download-button.png) 0 0 no-repeat;
+}
+
+aside #resumo{
+    background: transparent url(../images/resumo.png) 0 0 no-repeat;
+
+}
+
+aside #intro{
+    background: transparent url(../images/introducao.png) 0 0 no-repeat;
+
+}
+
+aside #conceitos{
+    background: transparent url(../images/conceito.png) 0 0 no-repeat;
+
+}
+
+aside #arq{
+    background: transparent url(../images/arquitetura.png) 0 0 no-repeat;
+
+}
+
+aside #ferramentas{
+    background: transparent url(../images/ferramentas.png) 0 0 no-repeat;
+
+}
+
+aside #app{
+    background: transparent url(../images/aplicacoes.png) 0 0 no-repeat;
+
+}
+
+aside #sec{
+    background: transparent url(../images/seguranca.png) 0 0 no-repeat;
+
+}
+
+aside #conclusao{
+ 
+  background: transparent url(../images/conclusao.png) 0 0 no-repeat;
+
+}
+
+aside #biblio{
+  background: transparent url(../images/biblio.png) 0 0 no-repeat;
+}
+
+aside #perguntas{
+    background: transparent url(../images/perguntas.png) 0 0 no-repeat;
+
 }
 
 code, pre {
