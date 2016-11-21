@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Software Defined Networks</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Software Defined Networks</h1>
+        <h2>EEL879 - Redes II - UFRJ 2016.2 </h2>
+    
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+			<span style="font-size:18px">
+				<br/><br/>
+				<p>
+					Atualmente, as redes de computadores, em especial a Internet, servem de base para um incontável número de aplicações e a cada dia são utilizadas por um número maior de pessoas. De acordo com a União Internacional de Telecomunicações (ITU - <em>International Telecommunication Union</em>), no final do ano de 2015  a Internet tinha cerca de 3,2 bilhões de usuários. Diariamente, inúmeras compras e transações bancárias são realizadas pela Internet, ações estas que exigem uma rede segura, uma vez que falhas de segurança nestes casos podem causar enorme prejuízo aos usuários. Desta maneira, a segurança é essencial em redes de computadores para que pessoas e organizações possam utilizá-las sem que seus dados corram riscos.
+				</p>
+				<p>
+					À medida que a Internet foi se expandindo, novas soluções de segurança foram criadas, como o IPSec, uma extensão que visa promover segurança na camada de rede. No entanto, da mesma forma, novas ameaças foram surgindo e atualmente a Internet possui diversos problemas de segurança. Redes tradicionais como a Internet de hoje são baseadas em software fechado sobre hardware proprietário e esta característica é um dos empecilhos na criação de redes mais seguras, pois leva um tempo considerável para que o software da rede receba atualizações de segurança.  
+				</p>
+				<p>
+					Ao separar os planos de dados e de controle, as redes definidas por software eliminam esta limitação, pois o controle, que é feito por software, não depende mais de hardware proprietário e pode receber imediatamente novas soluções de segurança através da interface programável aberta de que as redes SDN dispõem.
+				</p>
+				<h1>Desafios de segurança em redes SDN</h1>
+				<br/>
+				<p>
+					A segurança em redes definidas por software tem muitos desafios em comum com a segurança em redes tradicionais, porém, ela possui alguns desafios específicos relacionados com as características arquiteturais das redes SDN. As redes definidas por software, no que diz respeito à segurança, apresentam vantagens e desvantagens com relação às redes tradicionais. Entre as vantagens, podemos citar:
+				</p>
+				<span >
+					<ul style="margin-left: 30px;">
+						<li><b>Monitoramento eficiente de tráfego anômalo:</b> O controlador SDN é capaz de monitorar toda a rede ao mesmo tempo e, por isso, a detecção de anomalias é mais eficiente do que em redes tradicionais;</li>
+						<li>
+							<b>Tratamento rápido de novas ameaças:</b> como já foi dito acima, sempre que uma nova ameaça a essas redes for detectada, esta pode ser tratada imediatamente via programação nas redes SDN. Já nas redes tradicionais, quando surge uma nova ameaça, é necessário esperar por uma atualização de um software fechado que é executado em um hardware proprietário.
+						</li>
+					</ul>
+				</span>
+				<p>As desvantagens incluem:</p>
+				<span >
+					<ul style="margin-left: 30px;">
+						<li>
+							<b>Controlador vulnerável:</b> devido à característica das redes SDN de ter o controle logicamente centralizado, muitas de suas funções estão concentradas no controlador. Assim, o controlador é um ponto único de falha e, ao atacá-lo e comprometê-lo, um atacante pode afetar toda a rede;
+						</li>
+						<li>
+							<b>Interface programável aberta:</b> Como a arquitetura das redes SDN é aberta, é extremamente fácil para um atacante descobrir as vulnerabilidades de software da rede. Além disso, essa interface programável torna muito mais fácil a tarefa de incorporar código malicioso na rede;
+						</li>
+						<li>
+							<b>Mais pontos de ataque:</b> Como a arquitetura SDN é dividida em 3 camadas, com a separação do plano de dados do plano de controle, ela possui mais pontos de ataques do que as redes tradicionais. Esses pontos são enumerados abaixo:
+							<br/>
+							<br/>
+							<ol style="margin-left: 60px;">
+								<li>O comutador;</li>
+								<li>O enlace entre comutadores;</li>
+								<li>O controlador;</li>
+								<li>Os enlaces entre o controlador e os comutadores;</li>
+								<li>O enlace entre controladores;</li>
+								<li>O software da camada de aplicação.</li>
+							</ol>
+						</li>
+					</ul>
+				</span>
+				<h1>Ameaças à segurança de redes SDN</h1>
+				<br/>
+				<h2>Ataques de DoS e DDoS no controlador</h2>
+				<br/>
+				<p>
+					O objetivo destes dois tipos de ataque é o mesmo: inundar a rede com uma quantidade enorme de pacotes em um curto espaço de tempo de modo a sobrecarregar o controlador e tornar seus recursos indisponíveis aos usuários legítimos. A diferença entre eles é que no ataque de DoS (Negação de Serviço, do inglês <em>Denial of Service</em>) apenas uma máquina é utilizada para enviar os pacotes e no ataque de DDoS (Ataque Distribuído de Negação de Serviço, do inglês <em>Distributed Denial of Service</em>) os pacotes são enviados por várias máquinas zumbis que são controladas pelo atacante. 
+				</p>
+				<p>
+					Com o OpenFlow habilitado, quando um pacote chega a um comutador e este não sabe como lidar com ele, ou o pacote completo é encaminhado ao controlador ou ele fica armazenado no <em>buffer</em> de fluxos e apenas o seu cabeçalho é enviado ao controlador. Assim, um ataque de negação de serviço sobrecarregará o controlador ao fazer com que ele lide com uma quantidade enorme de pacotes com os quais o comutador não sabe como lidar, além de deixar o enlace entre os comutadores e o controlador totalmente ocupado.
+				</p>
+              
+	   	  </section>
+       <aside id="sidebar">
+          <a href="index.html" class="button" id="resumo">
+            <small>SDN</small>
+            Resumo
+          </a>
+          <a href="introducao.html" class="button" id="intro">
+            <small>SDN</small>
+            Introdução
+          </a>
+          <a href="conceitos.html" class="button" id="conceitos">
+            <small>SDN</small>
+            Conceitos
+          </a>
+          <a href="arquitetura.html" class="button" id="arq">
+            <small>SDN</small>
+            Arquitetura
+          </a>
+          <a href="ferramentas.html" class="button" id="ferramentas">
+            <small>SDN</small>
+            Ferramentas
+          </a>
+          <a href="aplicacao.html" class="button" id="app">
+            <small>SDN</small>
+            Aplicações
+          </a>
+          <a href="seguranca.html" class="button" id="sec">
+            <small>SDN</small>
+            Segurança
+          </a>
+          <a href="conclusao.html" class="button" id="conclusao">
+            <small>SDN</small>
+            Conclusão
+          </a>
+          <a href="bibliografia.html" class="button" id="biblio">
+            <small>SDN</small>
+            Bibliografia
+          </a>
+          <a href="bibliografia.html" class="button" id="perguntas">
+            <small>SDN</small>
+            Perguntas
+          </a>
+
+
+          <p class="repo-owner"></p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
