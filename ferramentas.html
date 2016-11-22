@@ -194,9 +194,30 @@ Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabe
 		<h2> Protocolo OpenFlow </h2>
 		<p> Há 3 tipos de mensagem:
 		<ul>
-			<li> controlador para comutador </li>
-			<li> assíncrona </li>
-			<li> simétrica </li>
+			<li> Controlador para comutador </li>
+			<p> São mensagens iniciadas pelo controlador e podem exigir ou não resposta. Como exemplos, o controlador pode:
+				<ul>
+					<li> requisitar as funcionalidades que o comutador possui </li> 
+					<li> perguntar ou determinar as configurações do comutador </li>
+					<li> modificar o estado das tabelas de fluxo, adicionando, excluindo, ou modificando as entradas </li>
+					<li> ler as estatísticas do comutador </li>
+				</ul>
+			</p>
+			<li> Assíncrona </li>
+			<p> São mensagens enviadas pelo comutador sem solicitação por parte do controlador. Como exemplos, o comutador pode avisar o controlador:
+				<ul>
+					<li> caso um pacote não tenha satisfeito nenhuma regra da primeira tabela de fluxo. Dependendo da configuração do comutador, ao invés de enviar o aviso, pode descartar o pacote ou checar a próxima tabela. </li>
+					<li> quando uma entrada da tabela de fluxo for excluída. Isto ocorre, por exemplo, devido às datas de expiração (dependendo ou não de inatividade) </li>
+					<li> caso haja algum problema, através da mensagem de erro </li>
+				</ul>
+			</p>
+			<li> Simétrica </li>
+			<p> São mensagens enviadas em ambas as direções, sem solicitação prévia. Podem ser mensagens:
+				<ul>
+					<li> 'hello' (para iniciação de conexão) </li>
+					<li> 'echo' (servem para medir a latência, por exemplo) </li>
+				</ul>
+			</p>
 		</ul>
 		</p>
             </span>
