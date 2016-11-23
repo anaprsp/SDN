@@ -30,9 +30,22 @@
         <section id="main-content">
 			<span style="font-size:18px">
 				<p>SDN(Software-defined networking), ou Redes definidas por software, é a separação física do plano de controle de rede do plano de encaminhamento, e também onde o plano de controle controla vários dispositivos.</p>
-	   	        <p>É uma nova abordagem no desenvolvimento, construção e gerenciamento de rede, que separa o controle da rede central, e dá a possibilidade de promover uma otimização personalizada.
-Essa tecnologia ativa arquiteturas de nuvem, disponibilizando distribuição e mobilidade de aplicativos de forma automatizada, sob demanda e em grande escala. Assim como aprimoram os benefícios da virtualização do data center, aumentando a flexibilidade, a utilização de recursos e reduzindo custos e sobrecargas de infraestrutura.</p>
-		        <p>SDN é uma arquitetura emergente dinâmica, controlável, tem custo eficiente e é adaptável, tornando-a perfeita para bandas largas, muito comum nos aplicativos atuais. Esta arquitetura desacopla a camada de controle de rede da de encaminhamento de funções que permitem o controle da rede para estar diretamente programável, e a infraestrutura subjacente será abstraída por aplicativos e serviços de rede. </p>
+				<p>Seu objetivo é permitir que engenheiros e administradores de nuvem e rede respondam rapidamente às mudanças nos requisitos de negócios por meio de um console de controle centralizado. O SDN engloba vários tipos de tecnologias de rede projetadas para tornar a rede mais flexível e ágil para suportar o servidor virtualizado e a infra-estrutura de armazenamento do moderno data center. A rede definida por software foi originalmente definida como uma abordagem para projetar, construir e gerenciar redes que separa a rede do plano de controle (cérebro) do  de encaminhamento(músculo), permitindo que o controle de rede torne-se diretamente programável e a infraestrutura subjacente a ser abstraído para aplicações e serviços de rede.</p>
+	   	        <span >
+				    <ul style="margin-left: 30px;"> 
+				        <div style="width: 650px; margin-left: 150px;">
+				        <p><img src="images/conceitos_SDN.png" alt="estrutra SDN"></p>
+				        <p style="font-size: 14px;">Figura 1: Divisão das camadas</p></div>
+			        </ul>
+			    </span>
+				<h1>Como funciona: </h1>
+				<p>Os provedores de rede definidos por software oferecem uma ampla seleção de arquiteturas concorrentes, mas no seu mais simples, o método Software Defined Networking centraliza o controle da rede separando a lógica de controle dos recursos de computador fora do dispositivo. Todos os modelos SDN têm alguma versão de um controlador SDN, bem como APIs southbound e APIs northbound:</p>
+				<ul>
+				    <li><b>Controladores:</b> Os "cérebros" da rede, os Controladores SDN oferecem uma visão centralizada da rede global e permitem que os administradores de rede ditem aos sistemas subjacentes (como switches e roteadores) como o plano de encaminhamento deve lidar com o tráfego da rede.</li>
+				    <li><b>APIs Southbound:</b> usa APIs southbound para retransmitir informações para os switches e roteadores "abaixo". O OpenFlow, considerado o primeiro padrão do SDN, era a API original do lado sul e permanece como um dos protocolos mais comuns. Apesar de alguns considerarem OpenFlow e SDN a mesma coisa, OpenFlow é apenas uma peça do enorme panorama SDN.</li>
+				    <li><b>APIs Northbound:</b> usa APIs northbound para se comunicar com os aplicativos e lógica de negócios "acima". Estes ajudam os administradores de rede a configurar o tráfego e implantar serviços de forma programática.</li>
+				</ul>
+				<p>Essa tecnologia aprimora os benefícios da virtualização do data center, aumentando a flexibilidade, a utilização de recursos e reduzindo custos e sobrecargas de infraestrutura.</p>
 		        <p>O protocolo OpenFlow é um elemento fundamental para a construção de soluções SDN. A arquitetura SDN é:</p>
 		        <ul>
 				   <li><b>Diretamente programável:</b>  pois o controle de rede é dissociado das funções de encaminhamento.</li>
@@ -44,15 +57,15 @@ Essa tecnologia ativa arquiteturas de nuvem, disponibilizando distribuição e m
 				<h1>Tendências: </h1>
 				<p>A SDN aborda o fato de que a arquitetura estática de redes convencionais é mal adequada para as necessidades de computação e armazenamento dinâmicos dos dias de hoje, como os data centers. A chave das tendências de computação que impulsiona a necessidade de um novo paradigma de rede incluem:</p>
 				<ul>
-				    <li><b>A mudança dos padrões de tráfego:</b> Aplicações que comumente acessam bancos de dados e servidores distribuídos geograficamente através das nuvens públicas e privadas exigem uma gestão do tráfego extremamente flexível e acesso a tamanho de banda sob demanda.</li>
-				    <li><b>O "consumerização de TI":</b> o fato de levar o próprio dispositivo tende a exigir redes flexíveis e seguras.</li>
+				    <li><b>A mudança dos padrões de tráfego:</b> Aplicações que comumente acessam bancos de dados e servidores distribuídos geograficamente através das nuvens públicas e privadas exigem uma gestão do tráfego extremamente flexível, e acesso a um tamanho de banda sob demanda.</li>
+				    <li><b>O "consumerização de TI":</b> o fato de  funcionários levarem seus próprios dispositivos móveis para o trabalho, e os usarem para compartilhar arquivos ou dados dentro e fora do escritório, tende a exigir redes flexíveis e seguras.</li>
 					<li><b>O aumento de serviços em nuvem:</b> Os usuários esperam ter acesso sob demanda para aplicações, infraestrutura e outros recursos de TI.</li>
 					<li><b>"Big Data":</b> A manipulação de mega conjuntos de dados hoje em dia, que requer processamento paralelo massivo, está alimentando uma demanda por constante capacidade adicional e conectividade any-to-any.</li>
 				</ul>
 				<p>Como os designers de rede  se sentem prejudicados pelas limitações das redes atuais, na tentativa de satisfazer os requisitos de rede colocados pela evolução das tendências de computação:</p>
 				<ul>
-				    <li><b>Complexidade leva a um período de inatividade:</b> A adição ou a movimentação de dispositivos e a implementação de políticas de rede são complexas, demoradas e, principalmente, manuais que correm o risco de interromper o serviço, desestimulando as mudanças na rede.</li>
-                    <li><b>Incapacidade de escalar:</b> a abordagem tradicional de super-subscrição de links para fornecer escalabilidade não é eficaz com os padrões de tráfego dinâmico em redes virtualizadas - um problema ainda mais acentuado nas redes de provedores de serviços com algoritmos de processamento em paralelo de grande escala e conjuntos de dados associados em todo um conjunto de computação.</li>
+				    <li><b>Complexidade leva a um período de inatividade:</b> A adição ou a movimentação de dispositivos e a implementação de políticas de rede são complexas, demoradas e, principalmente, manuais, que correm o risco de interromper o serviço, desestimulando as mudanças na rede.</li>
+                    <li><b>Incapacidade de escalar:</b> a abordagem tradicional de super-subscrição de links para fornecer escalabilidade não é eficaz com os padrões de tráfego dinâmico em redes virtualizadas - um problema ainda mais acentuado nas redes de provedores de serviços com algoritmos de processamento em paralelo de grande escala e conjuntos de dados associados.</li>
                     <li><b>Dependência do fornecedor:</b> os longos ciclos de produtos de equipamentos de fornecedores e a falta de interfaces padrão e abertas limitam a capacidade dos operadores de rede de adaptar a rede aos seus ambientes individuais.</li>
 				</ul>
 				<h1>ONF - Open Networking Foundation:</h1>
