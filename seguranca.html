@@ -21,7 +21,7 @@
       <div class="inner">
         <h1>Software Defined Networks</h1>
         <h2>EEL879 - Redes II - UFRJ 2016.2 </h2>
-    
+
       </div>
     </header>
 
@@ -34,7 +34,7 @@
 					Atualmente, as redes de computadores, em especial a Internet, servem de base para um incontável número de aplicações e a cada dia são utilizadas por um número maior de pessoas. De acordo com a União Internacional de Telecomunicações (ITU - <em>International Telecommunication Union</em>), no final do ano de 2015  a Internet tinha cerca de 3,2 bilhões de usuários. Diariamente, inúmeras compras e transações bancárias são realizadas pela Internet, ações estas que exigem uma rede segura, uma vez que falhas de segurança nestes casos podem causar enorme prejuízo aos usuários. Desta maneira, a segurança é essencial em redes de computadores para que pessoas e organizações possam utilizá-las sem que seus dados corram riscos.
 				</p>
 				<p>
-					À medida que a Internet foi se expandindo, novas soluções de segurança foram criadas, como o IPSec, uma extensão que visa promover segurança na camada de rede. No entanto, da mesma forma, novas ameaças foram surgindo e atualmente a Internet possui diversos problemas de segurança. Redes tradicionais como a Internet de hoje são baseadas em software fechado sobre hardware proprietário e esta característica é um dos empecilhos na criação de redes mais seguras, pois leva um tempo considerável para que o software da rede receba atualizações de segurança.  
+					À medida que a Internet foi se expandindo, novas soluções de segurança foram criadas, como o IPSec, uma extensão que visa promover segurança na camada de rede. No entanto, da mesma forma, novas ameaças foram surgindo e atualmente a Internet possui diversos problemas de segurança. Redes tradicionais como a Internet de hoje são baseadas em software fechado sobre hardware proprietário e esta característica é um dos empecilhos na criação de redes mais seguras, pois leva um tempo considerável para que o software da rede receba atualizações de segurança.
 				</p>
 				<p>
 					Ao separar os planos de dados e de controle, as redes definidas por software eliminam esta limitação, pois o controle, que é feito por software, não depende mais de hardware proprietário e pode receber imediatamente novas soluções de segurança através da interface programável aberta de que as redes SDN dispõem.
@@ -85,7 +85,7 @@
 				<h2>Ataques de DoS e DDoS no controlador</h2>
 				<br/>
 				<p>
-					O objetivo destes dois tipos de ataque é o mesmo: inundar a rede com uma quantidade enorme de pacotes em um curto espaço de tempo de modo a sobrecarregar o controlador e tornar seus recursos indisponíveis aos usuários legítimos. A diferença entre eles é que no ataque de DoS (Negação de Serviço, do inglês <em>Denial of Service</em>) apenas uma máquina é utilizada para enviar os pacotes e no ataque de DDoS (Ataque Distribuído de Negação de Serviço, do inglês <em>Distributed Denial of Service</em>) os pacotes são enviados por várias máquinas zumbis que são controladas pelo atacante. 
+					O objetivo destes dois tipos de ataque é o mesmo: inundar a rede com uma quantidade enorme de pacotes em um curto espaço de tempo de modo a sobrecarregar o controlador e tornar seus recursos indisponíveis aos usuários legítimos. A diferença entre eles é que no ataque de DoS (Negação de Serviço, do inglês <em>Denial of Service</em>) apenas uma máquina é utilizada para enviar os pacotes e no ataque de DDoS (Ataque Distribuído de Negação de Serviço, do inglês <em>Distributed Denial of Service</em>) os pacotes são enviados por várias máquinas zumbis que são controladas pelo atacante.
 				</p>
 				<p>
 					Com o OpenFlow habilitado, quando um pacote chega a um comutador e este não sabe como lidar com ele, ou o pacote completo é encaminhado ao controlador ou ele fica armazenado no <em>buffer</em> de fluxos e apenas o seu cabeçalho é enviado ao controlador. Assim, um ataque de negação de serviço sobrecarregará o controlador ao fazer com que ele lide com uma quantidade enorme de pacotes com os quais o comutador não sabe como lidar, além de deixar o enlace entre os comutadores e o controlador totalmente ocupado. A imagem abaixo ilustra um ataque de negação de serviço:
@@ -94,7 +94,7 @@
 				<div style="width: 650px; margin-left: 60px;">
 				<img src="images/negacao-de-servico.png"/>
 				<p style="font-size: 14px;">Ataque de negação de serviço. Adaptada do artigo Security in Software-Defined Networking: Threats and Countermeasures em https://www.researchgate.net/publication/290477553_Security_in_Software-Defined_Networking_Threats_and_Countermeasures</p></div>
-              
+
 	   	  </section>
        <aside id="sidebar">
           <a href="index.html" class="button" id="resumo">
@@ -133,7 +133,7 @@
             <small>SDN</small>
             Bibliografia
           </a>
-          <a href="bibliografia.html" class="button" id="perguntas">
+          <a href="perguntas.html" class="button" id="perguntas">
             <small>SDN</small>
             Perguntas
           </a>
@@ -146,6 +146,6 @@
       </div>
     </div>
 
-  
+
   </body>
 </html>

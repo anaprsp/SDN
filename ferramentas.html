@@ -21,7 +21,7 @@
       <div class="inner">
         <h1>Software Defined Networks</h1>
         <h2>EEL879 - Redes II - UFRJ 2016.2 </h2>
-    
+
       </div>
     </header>
 
@@ -42,7 +42,7 @@
                 <h2 style="margin-left: 30px;"> NOX </h2>
                 <p style="margin-left: 25px;">
                   NOX foi o primeiro controlador SDN, desenvolvido inicialmente por Nicira Networks, junto com o OpenFlow. Foi doado para a comunidade SDN <i>open source</i>, virando a base para as próximas soluções de controladores.
-                </p> 
+                </p>
                 <p style="margin-left: 25px;">
                   Nox é dividido em diferentes linhas de desenvolvimento:
                 </p>
@@ -63,7 +63,7 @@
               <spam>
                 <h2 style="margin-left: 30px;"> Beacon </h2>
                 <p style="margin-left: 25px;">
-                  Controlador com base em Java, Beacon é um dos mais populares controladores.  
+                  Controlador com base em Java, Beacon é um dos mais populares controladores.
                   Foi o primeiro a possibilitar programadores iniciantes a criarem e trabalharem com ambientes SDN, porém é limitado a topologia de estrela.
                 </p>
               </spam>
@@ -71,9 +71,9 @@
               <spam>
                 <h2 style="margin-left: 30px;"> FloodLight </h2>
                 <p style="margin-left: 25px;">
-                   Como o Beacon, é um controlador com base em Java, sendo considerado hoje em dia, o mais popular entre os controladores 
+                   Como o Beacon, é um controlador com base em Java, sendo considerado hoje em dia, o mais popular entre os controladores
                 </p>
-                 
+
                 <p style="margin-left: 25px;">
                   Podemos dizer que sua popularidade vem da facilidade que os desenvolvedores tem para desenvolver aplicações, dado que elas podem ser construídas utilizando a arquitetura <i>REST</i>.
                 </p>
@@ -87,10 +87,10 @@
                 <p style="margin-left: 25px;">
                    Deriva do design original do Beacon, sendo também com base em Java, o <i>OpenDaylight</i> é capaz de ser implementado em uma variedade de ambientes de rede de produção. Pode suportar uma estrutura de controlador modular e para outros padrões de SDN e protocolos futuros.
                 </p>
-                <p style="margin-left: 25px;">  
-                  Este controlador é implementado somente em <i>software</i>, e é mantido dentro de sua própria máquina virtual Java (JVM). Isto é, pode ser implementado em <i>hardwares</i> e 
-                  plataformas com suporte Java. 
-                </p>                           
+                <p style="margin-left: 25px;">
+                  Este controlador é implementado somente em <i>software</i>, e é mantido dentro de sua própria máquina virtual Java (JVM). Isto é, pode ser implementado em <i>hardwares</i> e
+                  plataformas com suporte Java.
+                </p>
               </spam>
 
               <spam>
@@ -98,9 +98,9 @@
                 <p style="margin-left: 25px;">
                   É projetado para operar como um cluster de nós que são idênticos em termo de sua pilha de <i>software</i> e pode suportar falhas de nós individuais sem causar interrupções em sua capacidade de controlar a operação da rede.
                 </p>
-                <p style="margin-left: 25px;">  
+                <p style="margin-left: 25px;">
                   Enquanto <i>ONOS</i> se inclina fortemente em protocolos e modelos padrão (OpenFlow, <i>NETCONF</i>,...), sua arquitetura de sistema não está diretamente ligada a eles. No lugar, fornece seu próprio conjunto de abstrações e modelos de alto nível.
-                </p>                           
+                </p>
               </spam>
 
 
@@ -143,7 +143,7 @@
             <span style="font-size:18px">
               <p>O FlowVisor não passa de um controlador OpenFlow que tem como principal característica atuar como um <i>middleware</i> entre os <i>switches</i> e os outros controladores OpenFlow.
               Todas as mensagens que são trocadas entre <i>switches</i> e o controlador são transmitidas por ele.</p>
-              <p> A sua principal função é dividir a rede entre os outros controladores OpenFlow de maneira a garantir  o isolamento entre as divisões, ou seja, ele deve garantir que cada controlador só possa ter visão e controle sobre seu pedaço da rede. Essa divisão pode ser feita de diversas maneira como por exemplo utilizando os endereços IP ou portas TCP</p>
+              <p> A sua principal função é dividir a rede entre os outros controladores OpenFlow de maneira a garantir o isolamento entre as divisões, ou seja, ele deve garantir que cada controlador só possa ter visão e controle sobre seu pedaço da rede. Essa divisão pode ser feita de diversas maneira como por exemplo utilizando os endereços IP ou portas TCP</p>
             </span>
 
           <h1>Openflow</h1>
@@ -161,15 +161,15 @@
 		</ul>
 		</p>
 		<h2> O comutador OpenFlow </h2>
-		<p> Como a maioria dos equipamentos Ethernet modernos contêm tabelas de fluxo, o Openflow usa isso para implementar serviços, como firewalls, NAT, QoS, além de coletar estatísticas. Ao mesmo tempo em que as tabelas de fluxo variam de vendedor para vendedor, há funções comuns a vários equipamentos distintos, que o Openflow busca utilizar. 
+		<p> Como a maioria dos equipamentos Ethernet modernos contêm tabelas de fluxo, o Openflow usa isso para implementar serviços, como firewalls, NAT, QoS, além de coletar estatísticas. Ao mesmo tempo em que as tabelas de fluxo variam de vendedor para vendedor, há funções comuns a vários equipamentos distintos, que o Openflow busca utilizar.
 Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabelas de fluxo em diferentes equipamentos. Isto atende os objetivos:
 		<ul>
 			<li> O administrador de rede pode particionar o tráfego, separando o experimental do de produção </li>
 			<li> Permite a pesquisa ao possibilitar que pesquisadores controlem seus próprios fluxos, ao escolher a rota que seus pacotes devem seguir e o processamento que devem receber </li>
 			<li> De uma forma pouco custosa, permite que pesquisadores testem novos protocolos (até substitutos ao IP), modelos de segurança, etc. </li>
-		</ul>		
+		</ul>
 		</p>
-		<p> O comutador consiste de, no mínimo, três partes: 
+		<p> O comutador consiste de, no mínimo, três partes:
 		<ul>
 			<li> A tabela de fluxos, que para cada fluxo de entrada (ou seja, pacotes cujos cabeçalhos satisfazem determinadas características) informa ao comutador como o pacote deve ser processado, através de uma série de ações que devem ser executadas </li>
 			<li> O chamado Canal Seguro, que conecta o comutador ao controlador (remoto), e que possibilita a troca de pacotes e comandos entre os dois </li>
@@ -197,7 +197,7 @@ Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabe
 			<li> Controlador para comutador </li>
 			<p> São mensagens iniciadas pelo controlador e podem exigir ou não resposta. Como exemplos, o controlador pode:
 				<ul>
-					<li> requisitar as funcionalidades que o comutador possui </li> 
+					<li> requisitar as funcionalidades que o comutador possui </li>
 					<li> perguntar ou determinar as configurações do comutador </li>
 					<li> modificar o estado das tabelas de fluxo, adicionando, excluindo, ou modificando as entradas </li>
 					<li> ler as estatísticas do comutador </li>
@@ -261,7 +261,7 @@ Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabe
             <small>SDN</small>
             Bibliografia
           </a>
-          <a href="bibliografia.html" class="button" id="perguntas">
+          <a href="perguntas.html" class="button" id="perguntas">
             <small>SDN</small>
             Perguntas
           </a>
@@ -274,6 +274,6 @@ Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabe
       </div>
     </div>
 
-  
+
   </body>
 </html>
