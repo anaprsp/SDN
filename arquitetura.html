@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Software Defined Networks</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Software Defined Networks</h1>
+        <h2>EEL879 - Redes II - UFRJ 2016.2 </h2>
+    
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+          <h1>Arquitetura</h1>
+            <span style="font-size:18px">
+              
+              <p>A arquitetura de uma SDN deve ser estruturada de tal forma que consiga garantir as seguintes 
+                características:</p>
+
+                <ul>
+                  <li>
+                    <strong>Configurável Programaticamente:</strong> 
+                    Queremos que a rede ofereça fácil configuração para que ela possa se adequar facilmente
+                    aos diferentes tipos de aplicações que necessitam de seus serviços.
+                  </li><br>
+                  <li>
+                    <strong>Ágil:</strong>
+                    Como a rede poderá ser modificada de forma à atender aos diferentes requisitos de cada
+                    aplicação, a configuração da mesma não pode demandar tanto tempo e dinheiro como vemos
+                    hoje em dia. A característica mencionada anteriormente se torna imprescindível para
+                    atendermos a agilidade necessária nas SDNs.
+                  </li><br>
+                  <li>
+                    <strong>Logicamente centralizada:</strong>
+                    A inteligência da rede de forma <strong>logicamente</strong> centralizada facilita a 
+                    implementação das lógicas de controle da rede. O termo logicamente centralizado significa 
+                    que a esta camada atua como uma entidade centralizada, mas que o seu conteúdo pode ser
+                    distribuído.
+                  </li><br>
+                  <li>
+                    <strong>Padrões abertos e independente de fornecedores:</strong>
+                    Para que seja fácil efetuar alterações na rede é necessário que os padrões nela utilizado
+                    sejam de fácil acesso e independentes dos fornecedores de hardware.
+                  </li><br>
+                </ul>
+
+              <span>
+                <h2 style="margin-left: 30px;"> Arquitetura simplificada </h2>
+                <p style="margin-left: 25px;">Para que todas essas características sejam atingidas a arquitetura 
+                proposta para as SDNs consiste na divisão do sistema em 3 camadas principais (aplicação, controle 
+                e dados) e interfaces de comunicação entre elas.</p>
+                
+                <figure>
+                  <img src="images/arch0.png" alt="Simple SDN" 
+                      onmouseover="this.src='images/arch0-gif.gif';"
+                      onmouseout="this.src='images/arch0.png';">
+                  <figcaption>
+                    <strong>Figura 1:</strong> 
+                    Arquitetura simplificada de uma SDN. Adaptada de TR_SDN_ARCH_1.0_06062014.pdf.
+                  </figcaption>
+                </figure>
+
+              </span>
+
+              <span>
+                <h2 style="margin-left: 30px;"> Arquitetura com gerenciamento </h2>
+                <p style="margin-left: 25px;">Além das 3 camadas principais, nessa arquitetura (um pouco mais 
+                  próxima da real arquitetura) temos uma camaga de gerenciamento.</p>
+
+                <figure>
+                  <img src="images/arch1.png" alt="Simple SDN" 
+                      onmouseover="this.src='images/arch1-gif.gif';"
+                      onmouseout="this.src='images/arch1.png';">
+                  <figcaption>
+                  <strong>Figura 2:</strong> 
+                  Arquitetura com gerenciamento de uma SDN. Adaptada de TR_SDN_ARCH_1.0_06062014.pdf.
+                </figcaption>
+                </figure>
+
+              </span>
+
+	   	  </section>
+
+        <aside id="sidebar">
+          <a href="index.html" class="button">
+            <small>SDN</small>
+            Resumo
+          </a>
+          <a href="introducao.html" class="button">
+            <small>SDN</small>
+            Introdução
+          </a>
+          <a href="conceitos.html" class="button">
+            <small>SDN</small>
+            Conceitos
+          </a>
+          <a href="arquitetura.html" class="button">
+            <small>SDN</small>
+            Arquitetura
+          </a>
+          <a href="ferramentas.html" class="button">
+            <small>SDN</small>
+            Ferramentas
+          </a>
+          <a href="aplicacao.html" class="button">
+            <small>SDN</small>
+            Aplicações
+          </a>
+          <a href="seguranca.html" class="button">
+            <small>SDN</small>
+            Segurança
+          </a>
+          <a href="conclusao.html" class="button">
+            <small>SDN</small>
+            Conclusão
+          </a>
+          <a href="bibliografia.html" class="button">
+            <small>SDN</small>
+            Bibliografia
+          </a>
+
+          <p class="repo-owner"></p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>

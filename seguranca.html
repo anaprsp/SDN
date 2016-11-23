@@ -62,7 +62,7 @@
 							<b>Interface programável aberta:</b> Como a arquitetura das redes SDN é aberta, é extremamente fácil para um atacante descobrir as vulnerabilidades de software da rede. Além disso, essa interface programável torna muito mais fácil a tarefa de incorporar código malicioso na rede;
 						</li>
 						<li>
-							<b>Mais pontos de ataque:</b> Como a arquitetura SDN é dividida em 3 camadas, com a separação do plano de dados do plano de controle, ela possui mais pontos de ataques do que as redes tradicionais. Esses pontos são enumerados abaixo:
+							<b>Mais pontos de ataque:</b> Como a arquitetura SDN é dividida em 3 camadas, com a separação do plano de dados do plano de controle, ela possui mais pontos de ataques do que as redes tradicionais. Esses pontos são enumerados e mostrados na figura abaixo:
 							<br/>
 							<br/>
 							<ol style="margin-left: 60px;">
@@ -73,6 +73,10 @@
 								<li>O enlace entre controladores;</li>
 								<li>O software da camada de aplicação.</li>
 							</ol>
+							<br/>
+							<div style="width: 650px; margin-left: 60px;">
+							<p><img src="images/pontos-de-ataque.png"></p>
+							<p style="font-size: 14px;">Pontos de ataque. Adaptada do artigo Security in Software-Defined Networking: Threats and Countermeasures em https://www.researchgate.net/publication/290477553_Security_in_Software-Defined_Networking_Threats_and_Countermeasures</p></div>
 						</li>
 					</ul>
 				</span>
@@ -84,8 +88,12 @@
 					O objetivo destes dois tipos de ataque é o mesmo: inundar a rede com uma quantidade enorme de pacotes em um curto espaço de tempo de modo a sobrecarregar o controlador e tornar seus recursos indisponíveis aos usuários legítimos. A diferença entre eles é que no ataque de DoS (Negação de Serviço, do inglês <em>Denial of Service</em>) apenas uma máquina é utilizada para enviar os pacotes e no ataque de DDoS (Ataque Distribuído de Negação de Serviço, do inglês <em>Distributed Denial of Service</em>) os pacotes são enviados por várias máquinas zumbis que são controladas pelo atacante. 
 				</p>
 				<p>
-					Com o OpenFlow habilitado, quando um pacote chega a um comutador e este não sabe como lidar com ele, ou o pacote completo é encaminhado ao controlador ou ele fica armazenado no <em>buffer</em> de fluxos e apenas o seu cabeçalho é enviado ao controlador. Assim, um ataque de negação de serviço sobrecarregará o controlador ao fazer com que ele lide com uma quantidade enorme de pacotes com os quais o comutador não sabe como lidar, além de deixar o enlace entre os comutadores e o controlador totalmente ocupado.
+					Com o OpenFlow habilitado, quando um pacote chega a um comutador e este não sabe como lidar com ele, ou o pacote completo é encaminhado ao controlador ou ele fica armazenado no <em>buffer</em> de fluxos e apenas o seu cabeçalho é enviado ao controlador. Assim, um ataque de negação de serviço sobrecarregará o controlador ao fazer com que ele lide com uma quantidade enorme de pacotes com os quais o comutador não sabe como lidar, além de deixar o enlace entre os comutadores e o controlador totalmente ocupado. A imagem abaixo ilustra um ataque de negação de serviço:
 				</p>
+				<br/>
+				<div style="width: 650px; margin-left: 60px;">
+				<img src="images/negacao-de-servico.png"/>
+				<p style="font-size: 14px;">Ataque de negação de serviço. Adaptada do artigo Security in Software-Defined Networking: Threats and Countermeasures em https://www.researchgate.net/publication/290477553_Security_in_Software-Defined_Networking_Threats_and_Countermeasures</p></div>
               
 	   	  </section>
        <aside id="sidebar">

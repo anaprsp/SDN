@@ -146,6 +146,83 @@
               <p> A sua principal função é dividir a rede entre os outros controladores OpenFlow de maneira a garantir  o isolamento entre as divisões, ou seja, ele deve garantir que cada controlador só possa ter visão e controle sobre seu pedaço da rede. Essa divisão pode ser feita de diversas maneira como por exemplo utilizando os endereços IP ou portas TCP</p>
             </span>
 
+          <h1>Openflow</h1>
+            <span style="font-size:18px">
+		<h2>A necessidade de redes programáveis </h2>
+		<p> Redes são parte crítica da vida humana. Devido à enorme quantidade de equipamentos instalados, e ao número de protocolos existentes, estas são de tal modo ossificadas que tornou-se difícil testar novas ideias, como, por exemplo, novos protocolos. Como resultado, a maioria das novas ideias da comunidade de pesquisa acaba não sendo devidamente testada, nunca adquirindo a confiança necessária para sua propagação.</p>
+		<p> Então, o conceito de redes programáveis emergiu. Estas exigem comutadores e roteadores programáveis, que podem processar pacotes para múltiplas redes experimentais simultaneamente, através da virtualização. </p>
+		<p> A maioria dos equipamentos de rede são proprietários (havendo pouca padronização) e, em geral, os vendedores não se interessam por disponibilizar uma plataforma aberta e programável para seus comutadores e roteadores, de modo que pesquisadores possam implantar novos protocolos. </p>
+		<p> A intenção do comutador Openflow é resolver estes problemas através da flexibilidade, possuindo 4 objetivos principais:
+		<ul>
+			<li> passível de alto desempenho com baixos custos de implementação </li>
+			<li> capaz de suportar uma ampla gama de pesquisa </li>
+			<li> capaz de separar o tráfego de experimentos do de produção </li>
+			<li> consistente com a necessidade de vendedores para plataformas fechadas </li>
+		</ul>
+		</p>
+		<h2> O comutador OpenFlow </h2>
+		<p> Como a maioria dos equipamentos Ethernet modernos contêm tabelas de fluxo, o Openflow usa isso para implementar serviços, como firewalls, NAT, QoS, além de coletar estatísticas. Ao mesmo tempo em que as tabelas de fluxo variam de vendedor para vendedor, há funções comuns a vários equipamentos distintos, que o Openflow busca utilizar. 
+Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabelas de fluxo em diferentes equipamentos. Isto atende os objetivos:
+		<ul>
+			<li> O administrador de rede pode particionar o tráfego, separando o experimental do de produção </li>
+			<li> Permite a pesquisa ao possibilitar que pesquisadores controlem seus próprios fluxos, ao escolher a rota que seus pacotes devem seguir e o processamento que devem receber </li>
+			<li> De uma forma pouco custosa, permite que pesquisadores testem novos protocolos (até substitutos ao IP), modelos de segurança, etc. </li>
+		</ul>		
+		</p>
+		<p> O comutador consiste de, no mínimo, três partes: 
+		<ul>
+			<li> A tabela de fluxos, que para cada fluxo de entrada (ou seja, pacotes cujos cabeçalhos satisfazem determinadas características) informa ao comutador como o pacote deve ser processado, através de uma série de ações que devem ser executadas </li>
+			<li> O chamado Canal Seguro, que conecta o comutador ao controlador (remoto), e que possibilita a troca de pacotes e comandos entre os dois </li>
+			<li> O Protocolo Openflow, que padroniza a comunicação entre o controlador e o comutador. É a interface com a qual as tabelas de fluxos podem ser definidas externamente </li>
+		</ul>
+		</p>
+		<p> Cada entrada da tabela associa os pacotes cujos cabeçalhos correspondem a determinadas regras a uma das seguintes ações básicas:
+		<ul>
+			<li> encaminhar os pacotes a determinada(s) porta(s), que permite o roteamento através da rede </li>
+			<li> encapsular e encaminhar os pacotes para o controlador, através do Canal Seguro. Em geral, o primeiro pacote de um determinado fluxo é encaminhado ao controlador para que este decida se deve ser adicionada à tabela uma entrada correspondente ao fluxo </li>
+			<li> descartar os pacotes do fluxo (ex. para segurança, bloqueando pacotes de determinadas origens) </li>
+		</ul>
+		</p>
+		<p> As tabelas de fluxo possuem 3 campos:
+		<ul>
+			<li> cabeçalho dos pacotes que definem o fluxo </li>
+			<li> instruções associadas ao fluxo, que definem como os pacotes serão processados </li>
+			<li> estatísticas: número de pacotes e bytes em determinado fluxo e o tempo desde o último pacote naquele fluxo (que facilita a remoção de fluxos inativos) </li>
+		</ul>
+		<img src="images/openflow-campos-tabela.png">
+		</p>
+		<h2> Protocolo OpenFlow </h2>
+		<p> Há 3 tipos de mensagem:
+		<ul>
+			<li> Controlador para comutador </li>
+			<p> São mensagens iniciadas pelo controlador e podem exigir ou não resposta. Como exemplos, o controlador pode:
+				<ul>
+					<li> requisitar as funcionalidades que o comutador possui </li> 
+					<li> perguntar ou determinar as configurações do comutador </li>
+					<li> modificar o estado das tabelas de fluxo, adicionando, excluindo, ou modificando as entradas </li>
+					<li> ler as estatísticas do comutador </li>
+				</ul>
+			</p>
+			<li> Assíncrona </li>
+			<p> São mensagens enviadas pelo comutador sem solicitação por parte do controlador. Como exemplos, o comutador pode avisar o controlador:
+				<ul>
+					<li> caso um pacote não tenha satisfeito nenhuma regra da primeira tabela de fluxo. Dependendo da configuração do comutador, ao invés de enviar o aviso, pode descartar o pacote ou checar a próxima tabela. </li>
+					<li> quando uma entrada da tabela de fluxo for excluída. Isto ocorre, por exemplo, devido às datas de expiração (dependendo ou não de inatividade) </li>
+					<li> caso haja algum problema, através da mensagem de erro </li>
+				</ul>
+			</p>
+			<li> Simétrica </li>
+			<p> São mensagens enviadas em ambas as direções, sem solicitação prévia. Podem ser mensagens:
+				<ul>
+					<li> 'hello' (para iniciação de conexão) </li>
+					<li> 'echo' (servem para medir a latência, por exemplo) </li>
+				</ul>
+			</p>
+		</ul>
+		</p>
+            </span>
+            </span>
+
 	   	  </section>
         <aside id="sidebar">
           <a href="index.html" class="button" id="resumo">
