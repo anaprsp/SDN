@@ -37,29 +37,37 @@
 
                 <ul>
                   <li>
-                    <strong>Configurável Programaticamente:</strong>
-                    Queremos que a rede ofereça fácil configuração para que ela possa se adequar facilmente
-                    aos diferentes tipos de aplicações que necessitam de seus serviços.
-                  </li><br>
+                    <p>
+                      <strong>Configurável Programaticamente:</strong>
+                      Queremos que a rede ofereça fácil configuração para que ela possa se adequar facilmente
+                      aos diferentes tipos de aplicações que necessitam de seus serviços.
+                    </p>
+                  </li>
                   <li>
-                    <strong>Ágil:</strong>
-                    Como a rede poderá ser modificada de forma à atender aos diferentes requisitos de cada
-                    aplicação, a configuração da mesma não pode demandar tanto tempo e dinheiro como vemos
-                    hoje em dia. A característica mencionada anteriormente se torna imprescindível para
-                    atendermos a agilidade necessária nas SDNs.
-                  </li><br>
+                    <p>
+                      <strong>Ágil:</strong>
+                      Como a rede poderá ser modificada de forma à atender aos diferentes requisitos de cada
+                      aplicação, a configuração da mesma não pode demandar tanto tempo e dinheiro como vemos
+                      hoje em dia. A característica mencionada anteriormente se torna imprescindível para
+                      atendermos a agilidade necessária nas SDNs.
+                    </p>
+                  </li>
                   <li>
-                    <strong>Logicamente centralizada:</strong>
-                    A inteligência da rede de forma <strong>logicamente</strong> centralizada facilita a
-                    implementação das lógicas de controle da rede. O termo logicamente centralizado significa
-                    que a esta camada atua como uma entidade centralizada, mas que o seu conteúdo pode ser
-                    distribuído.
-                  </li><br>
+                    <p>
+                      <strong>Logicamente centralizada:</strong>
+                      A inteligência da rede de forma <strong>logicamente</strong> centralizada facilita a
+                      implementação das lógicas de controle da rede. O termo logicamente centralizado significa
+                      que a esta camada atua como uma entidade centralizada, mas que o seu conteúdo pode ser
+                      distribuído.
+                    </p>
+                  </li>
                   <li>
-                    <strong>Padrões abertos e independente de fornecedores:</strong>
-                    Para que seja fácil efetuar alterações na rede é necessário que os padrões nela utilizado
-                    sejam de fácil acesso e independentes dos fornecedores de hardware.
-                  </li><br>
+                    <p>
+                      <strong>Padrões abertos e independente de fornecedores:</strong>
+                      Para que seja fácil efetuar alterações na rede é necessário que os padrões nela utilizado
+                      sejam de fácil acesso e independentes dos fornecedores de hardware.
+                    </p>
+                  </li>
                 </ul>
 
               <span>
@@ -68,13 +76,16 @@
                 proposta para as SDNs consiste na divisão do sistema em 3 camadas principais (aplicação, controle
                 e dados) e interfaces de comunicação entre elas.</p>
 
-                <figure>
+                <figure style="text-align:center">
                   <img src="images/arch0.png" alt="Simple SDN"
                       onmouseover="this.src='images/arch0-gif.gif';"
                       onmouseout="this.src='images/arch0.png';">
                   <figcaption>
-                    <strong>Figura 1:</strong>
-                    Arquitetura simplificada de uma SDN. Adaptada de TR_SDN_ARCH_1.0_06062014.pdf.
+                    <p style="font-size:12px">
+                      [Passe o mouse para ver animação] <br>
+                      <strong>Figura 1:</strong>
+                      Arquitetura simplificada de uma SDN. Adaptada de TR_SDN_ARCH_1.0_06062014.pdf.
+                    </p>
                   </figcaption>
                 </figure>
 
@@ -85,14 +96,41 @@
                 <p style="margin-left: 25px;">Além das 3 camadas principais, nessa arquitetura (um pouco mais
                   próxima da real arquitetura) temos uma camaga de gerenciamento.</p>
 
-                <figure>
+                <figure style="text-align:center">
                   <img src="images/arch1.png" alt="Simple SDN"
                       onmouseover="this.src='images/arch1-gif.gif';"
                       onmouseout="this.src='images/arch1.png';">
                   <figcaption>
-                  <strong>Figura 2:</strong>
-                  Arquitetura com gerenciamento de uma SDN. Adaptada de TR_SDN_ARCH_1.0_06062014.pdf.
-                </figcaption>
+                    <p style="font-size:12px">
+                      [Passe o mouse para ver animação] <br>
+                      <strong>Figura 2:</strong>
+                      Arquitetura com gerenciamento de uma SDN. Adaptada de TR_SDN_ARCH_1.0_06062014.pdf.
+                    </p>
+                  </figcaption>
+                </figure>
+
+              </span>
+
+              <span>
+                <h2 style="margin-left: 30px;"> Arquitetura "avançada" </h2>
+                <p style="margin-left: 25px;">Arquitetura mais completa que mostra uma alternativa para o 
+                  suporte à multiplas aplicações. Esta arquitetura conta com um plano de controle logicamente 
+                  centralizado, porém com agentes de controle distribuídos, possibilitando que cada agente 
+                  atua no plano de controle com diferentes níveis de abstração. Além disso cada agente (ou 
+                  um conjunto de agentes) fica responsável por cuidar dos requisitos de cada aplicação 
+                  separadamente.</p>
+
+                <figure style="text-align:center">
+                  <img src="images/arch2.png" alt="Simple SDN"
+                      onmouseover="this.src='images/arch2-gif.gif';"
+                      onmouseout="this.src='images/arch2.png';">
+                  <figcaption>
+                    <p style="font-size:12px">
+                      [Passe o mouse para ver animação] <br>
+                      <strong>Figura 2:</strong>
+                      Arquitetura "avançada" de uma SDN. Adaptada de TR_SDN_ARCH_1.0_06062014.pdf.
+                    </p>
+                  </figcaption>
                 </figure>
 
               </span>
