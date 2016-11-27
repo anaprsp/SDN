@@ -32,7 +32,7 @@
           <h1>Controladores</h1>
             <span style="font-size:18px">
               <p>
-                Aplicação em SDN que gerencia o controle de fluxo para permitir uma rede inteligente. São baseados em protocolos, como o OpenFlow, que permitem aos servidores comunicar os <i>switches</i> para onde enviar os pacotes.</p>
+                Aplicação em SDN que gerencia o controle de fluxo para permitir uma rede inteligente. São baseados em protocolos, como o OpenFlow, que permitem aos servidores comunicar os comutadores para onde enviar os pacotes.</p>
               <p>
                 O controlador funciona como uma espécie de sistema operacional para a rede. Ao retirar o plano de controle do hardware da rede e executando como software, o controlador facilita o gerenciamento automatizado da rede, facilitando a integração e administração de aplicativos.</p>
               <p>
@@ -107,7 +107,7 @@
             </span>
           <h1>Open vSwitch (OVS)</h1>
             <span style="font-size:18px">
-            <p>Como o nome sugere, é um <i>switch</i> virtual com código aberto que implementa o protocolo OpenFLow. Simulando <i>switches</i> em ambientes virtuais, ele permite que máquinas virtuais se comuniquem entre si em um mesmo <i>host</i> ou até mesmo realizar a comunicação com a rede física.</p>
+            <p>Como o nome sugere, é um comutador virtual com código aberto que implementa o protocolo OpenFLow. Simulando comutadores em ambientes virtuais, ele permite que máquinas virtuais se comuniquem entre si em um mesmo <i>host</i> ou até mesmo realizar a comunicação com a rede física.</p>
             <p>O OVS é executado como se fosse uma distribuição Linux, porém pode ser utilizado em nível de usuário ao custo de perder desempenho e acesso à alguns recursos. Ele também pode ser executado na maioria das plataformas virtuais, como por exemplo <i>VirtualBox</i>, facilitando assim a realização de testes.</p>
             <p>Atualmente o OVS fornece ao usuário o controle de diversos recursos, entre eles:</p>
               <span >
@@ -141,10 +141,24 @@
             </span>
           <h1>FlowVisor</h1>
             <span style="font-size:18px">
-              <p>O FlowVisor não passa de um controlador OpenFlow que tem como principal característica atuar como um <i>middleware</i> entre os <i>switches</i> e os outros controladores OpenFlow.
-              Todas as mensagens que são trocadas entre <i>switches</i> e o controlador são transmitidas por ele.</p>
+              <p>O FlowVisor não passa de um controlador OpenFlow que tem como principal característica atuar como um <i>middleware</i> entre os comutadores e os outros controladores OpenFlow.
+              Todas as mensagens que são trocadas entre comutadores e o controlador são transmitidas por ele.</p>
               <p> A sua principal função é dividir a rede entre os outros controladores OpenFlow de maneira a garantir o isolamento entre as divisões, ou seja, ele deve garantir que cada controlador só possa ter visão e controle sobre seu pedaço da rede. Essa divisão pode ser feita de diversas maneira como por exemplo utilizando os endereços IP ou portas TCP</p>
             </span>
+          <h1>RouteFlow</h1>
+          <span style="font-size:18px">
+
+              <p>Projeto de código aberto que tem como objetivo fornecer serviços virtualizados de roteamento IP utilizando o protocolo OpenFlow.
+</p>
+              <p>Ele facilita a criação, remoção e aperfeiçoamento de protocolos das redes IP realizando a separação do plano de controle do plano de encaminhamento.
+  Podemos definir o RouteFlow em três partes:
+            </p>
+            <p><b>RouteFlow Protocol -</b> Contém os comandos básicos do RouteFlow para realizar as configurações necessárias nas máquinas virtuais.
+            </p>
+            <p><b>RouteFlow Controller -</b> É uma aplicação baseada no controlador NOX. Ele é responsável por gerenciar o recebimento dos pacotes, o estado dos computadores(conectados/desconectados) e as conexões entre os comutadores e as máquinas virtuais</p>
+            <p><b>RouteFlow Slaves -</b> São aplicações que são executadas nas máquinas virtuais da rede. São responsáveis pela comunicação da máquina com o controlador e consequentemente com o resto da rede.</p>
+          </span>
+
 
           <h1>Openflow</h1>
             <span style="font-size:18px">
