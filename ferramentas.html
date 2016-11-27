@@ -148,25 +148,14 @@
 
           <h1>Openflow</h1>
             <span style="font-size:18px">
-		<h2>A necessidade de redes programáveis </h2>
-		<p> Redes são parte crítica da vida humana. Devido à enorme quantidade de equipamentos instalados, e ao número de protocolos existentes, estas são de tal modo ossificadas que tornou-se difícil testar novas ideias, como, por exemplo, novos protocolos. Como resultado, a maioria das novas ideias da comunidade de pesquisa acaba não sendo devidamente testada, nunca adquirindo a confiança necessária para sua propagação.</p>
-		<p> Então, o conceito de redes programáveis emergiu. Estas exigem comutadores e roteadores programáveis, que podem processar pacotes para múltiplas redes experimentais simultaneamente, através da virtualização. </p>
-		<p> A maioria dos equipamentos de rede são proprietários (havendo pouca padronização) e, em geral, os vendedores não se interessam por disponibilizar uma plataforma aberta e programável para seus comutadores e roteadores, de modo que pesquisadores possam implantar novos protocolos. </p>
-		<p> A intenção do comutador Openflow é resolver estes problemas através da flexibilidade, possuindo 4 objetivos principais:
-		<ul>
-			<li> passível de alto desempenho com baixos custos de implementação </li>
-			<li> capaz de suportar uma ampla gama de pesquisa </li>
-			<li> capaz de separar o tráfego de experimentos do de produção </li>
-			<li> consistente com a necessidade de vendedores para plataformas fechadas </li>
-		</ul>
-		</p>
 		<h2> O comutador OpenFlow </h2>
 		<p> Como a maioria dos equipamentos Ethernet modernos contêm tabelas de fluxo, o Openflow usa isso para implementar serviços, como firewalls, NAT, QoS, além de coletar estatísticas. Ao mesmo tempo em que as tabelas de fluxo variam de vendedor para vendedor, há funções comuns a vários equipamentos distintos, que o Openflow busca utilizar.
 Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabelas de fluxo em diferentes equipamentos. Isto atende os objetivos:
 		<ul>
 			<li> O administrador de rede pode particionar o tráfego, separando o experimental do de produção </li>
 			<li> Permite a pesquisa ao possibilitar que pesquisadores controlem seus próprios fluxos, ao escolher a rota que seus pacotes devem seguir e o processamento que devem receber </li>
-			<li> De uma forma pouco custosa, permite que pesquisadores testem novos protocolos (até substitutos ao IP), modelos de segurança, etc. </li>
+			<li> De uma forma pouco custosa, permite que pesquisadores testem novos protocolos (até substitutos ao IP), modelos de segurança etc. </li>
+			<li> Não se contrapõe aos equipamentos fechados já existentes, como veremos a seguir </li>
 		</ul>
 		</p>
 		<p> O comutador consiste de, no mínimo, três partes:
@@ -181,6 +170,8 @@ Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabe
 			<li> encaminhar os pacotes a determinada(s) porta(s), que permite o roteamento através da rede </li>
 			<li> encapsular e encaminhar os pacotes para o controlador, através do Canal Seguro. Em geral, o primeiro pacote de um determinado fluxo é encaminhado ao controlador para que este decida se deve ser adicionada à tabela uma entrada correspondente ao fluxo </li>
 			<li> descartar os pacotes do fluxo (ex. para segurança, bloqueando pacotes de determinadas origens) </li>
+			<li> enviar o pacote para a próxima tabela de fluxo </li>
+			<li> encaminhar os pacotes do fluxo através da pipeline normal de processamento nas Camadas 2 e 3 do comutador </li>
 		</ul>
 		</p>
 		<p> As tabelas de fluxo possuem 3 campos:
