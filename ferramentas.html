@@ -163,8 +163,9 @@ Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabe
 			<li> A tabela de fluxos, que para cada fluxo de entrada (ou seja, pacotes cujos cabeçalhos satisfazem determinadas características) informa ao comutador como o pacote deve ser processado, através de uma série de ações que devem ser executadas </li>
 			<li> O chamado Canal Seguro, que conecta o comutador ao controlador (remoto), e que possibilita a troca de pacotes e comandos entre os dois </li>
 			<li> O Protocolo Openflow, que padroniza a comunicação entre o controlador e o comutador. É a interface com a qual as tabelas de fluxos podem ser definidas externamente </li>
-		</ul>
-		</p>
+		</ul> </p>
+		<p> Esquema simples do comutador: </p>
+		<img src="images/comutadorOpenflow.png">
 		<p> Cada entrada da tabela associa os pacotes cujos cabeçalhos correspondem a determinadas regras a uma das seguintes ações básicas:
 		<ul>
 			<li> encaminhar os pacotes a determinada(s) porta(s), que permite o roteamento através da rede </li>
@@ -172,16 +173,22 @@ Este é o cerne do Openflow: fornecer um protocolo aberto para programar as tabe
 			<li> descartar os pacotes do fluxo (ex. para segurança, bloqueando pacotes de determinadas origens) </li>
 			<li> enviar o pacote para a próxima tabela de fluxo </li>
 			<li> encaminhar os pacotes do fluxo através da pipeline normal de processamento nas Camadas 2 e 3 do comutador </li>
-		</ul>
+		</ul> </p>
+		<p>
+			Caminho do pacote:
 		</p>
+		<img src="images/pacoteOpenflow.png">
 		<p> As tabelas de fluxo possuem 3 campos:
 		<ul>
 			<li> cabeçalho dos pacotes que definem o fluxo </li>
 			<li> instruções associadas ao fluxo, que definem como os pacotes serão processados </li>
 			<li> estatísticas: número de pacotes e bytes em determinado fluxo e o tempo desde o último pacote naquele fluxo (que facilita a remoção de fluxos inativos) </li>
 		</ul>
-		<img src="images/openflow-campos-tabela.png">
 		</p>
+		<p> Campos do cabeçalhos usado nas regras: </p>
+		<img src="images/cabecalhoOpenflow.png">
+		<p> Exemplo de tabela de fluxo:</p>
+		<img src="images/openflow-campos-tabela.png">
 		<h2> Protocolo OpenFlow </h2>
 		<p> Há 3 tipos de mensagem:
 		<ul>
