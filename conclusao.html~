@@ -28,6 +28,24 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
+          <h1>
+          	Alunos
+          </h1>
+          <span style="font-size:18px">
+      		  Ana Paula Rocha Soares Passos<br>
+      		  Anderson de Souza Barbosa<br>
+      		  Eric Reis Figueiredo<br>
+      		  Marcos Aurélio Constant de Souza Filho<br>
+      		  Thiago Luis Azevedo Maia<br>
+      		  Yago Meira Lopes de Carvalho
+          </span>
+
+          <h1>
+            Professor
+          </h1>
+          <span style="font-size:18px">
+            Otto Carlos Muniz Bandeira Duarte
+          </span>
 
           <h1>
             Conclusão
@@ -38,10 +56,21 @@
               O assunto de Redes Definidas por Software é algo que vem sendo muito estudado e tem um futuro muito promissor, com investimentos de várias áreas da indústria da tecnologia.
             </p>
             <p style="margin-left: 25px">
-              Nosso trabalho explicou os conceitos básicos desse novo paradigma em redes, explicitando aspectos de implementação, arquitetura, protocolos, além das aplicações e melhorias que esse tipo de 		      tecnologia pode oferecer.
+              Nosso trabalho explicou os conceitos básicos desse novo paradigma em redes, explicitando aspectos de implementação, arquitetura, protocolos, além das aplicações e melhorias que esse tipo de tecnologia pode oferecer.
             </p>
           </span>
-	</section>
+
+          <h1>
+            Direitos Autorais
+          </h1>
+          <span style="font-size:18px">
+            Este trabalho foi totalmente produzido pelos autores que declaram não terem violado os direitos autorais de terceiros, sejam eles pessoas físicas ou jurídicas. Havendo textos, tabelas e figuras transcritos de obras de terceiros com direitos autorais protegidos ou de domínio público tal como idéias e conceitos de terceiros, mesmo que sejam encontrados na Internet, os mesmos estão com os devidos créditos aos autores originais e estão incluídas apenas com o intuito de deixar o trabalho autocontido. O(s) autor(es) tem(êm) ciência dos Artigos 297 a 299 do Código Penal Brasileiro e também que o uso do artifício de copiar/colar texto de outras fontes e outras formas de plágio é um ato ilícito, condenável e passível de punição severa. No contexto da Universidade a punição não precisa se restringir à reprovação na disciplina e pode gerar um processo disciplinar que pode levar o(s) aluno(s) à suspensão.
+          </span>
+
+
+
+
+		  </section>
         <aside id="sidebar">
           <a href="index.html" class="button" id="resumo">
             <small>SDN</small>
