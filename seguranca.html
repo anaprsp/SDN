@@ -94,7 +94,22 @@
 				<div style="width: 650px; margin-left: 60px;">
 				<img src="images/negacao-de-servico.png"/>
 				<p style="font-size: 14px;">Ataque de negação de serviço. Adaptada do artigo Security in Software-Defined Networking: Threats and Countermeasures em https://www.researchgate.net/publication/290477553_Security_in_Software-Defined_Networking_Threats_and_Countermeasures</p></div>
-
+				<br/>
+				<h2>Ataques de DoS para saturar a tabela de fluxos</h2>
+				<br/>
+				<p>
+					Assim como o discutido acima, este é um ataque de negação de serviço e é realizado através da inundação da rede com inúmeros pacotes, mas, apesar disso, ele objetiva atacar o plano de dados ao contrário do anterior, que objetiva atacar o plano de controle. A vulnerabilidade das redes SDN explorada por este tipo de ataque de DoS é a maneira com que o OpenFlow lida com pacotes com endereços de destino desconhecidos, que é criar uma nova regra para cada um deles e inseri-la na tabela de fluxos. Desta forma, para saturar a tabela de fluxos, um atacante gera uma grande quantidade de pacotes com endereços de destino desconhecidos, o que em pouco tempo fará com que a capacidade de armazenamento limitada de um comutador seja completamente consumida. Com isso, novas regras geradas por tráfego legítimo não poderão ser inseridas na tabela e seus pacotes não serão encaminhados corretamente.
+				</p>
+				<br/>
+				<h2>Acesso Ilegal</h2>
+				<br/>
+				<p>
+					Como as redes SDN são muito flexíveis, as aplicações que são executadas no controlador têm acesso privilegiado aos recursos e ao controle da rede. Além disso, a maior parte destas aplicações não são desenvolvidas por quem fornece os comutadores e, portanto, não existe um mecanismo padrão de segurança para elas, o que gera uma vulnerabilidade na rede. X. Wen et al. propuseram um sistema chamado PermOF, que busca eliminar esta ameaça através da minimização dos privilégios das aplicações executadas no controlador.
+				</p>
+				<br/>
+				<p>
+					Embora as redes SDN possuam algumas vulnerabilidades que são fruto de suas características arquiteturais, já existem muitas propostas para solucionar as ameaças que buscam utilizá-las, como o PermOF, citado no parágrafo anterior. O surgimento de tantas propostas foi facilitado pelo fato de as SDN serem programáveis, como dito acima, e portanto problemas relacionados à segurança não devem ser um empecilho à utilização deste novo tipo de arquitetura de rede que traz muitas vantagens e deve mudar a maneira com que as redes de computadores são utilizadas.
+				</p>
 	   	  </section>
        <aside id="sidebar">
           <a href="index.html" class="button" id="resumo">
